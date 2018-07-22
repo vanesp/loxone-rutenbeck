@@ -48,6 +48,8 @@ Rutenbeck. Then you also need to enable UDP operation and the UDP port 30303.
 Then it is a simple matter of sending a command using standard Loxone virtual
 output: OUT1 1 to switch on relay 1, OUT3 0 to switch off relay 3.
 
+The UDP-command must be send to Port 30303 and end with Hex 0H
+
 ## Reading status
 
 I also found a hidden HTTP request that returns the status of the relays (so that you can check if a local switch has enabled a relay). Go to http://192.168.0.3/status.xml
