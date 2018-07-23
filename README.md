@@ -66,7 +66,8 @@ Changing Ein to Aus switches it off.
 I also found a hidden HTTP request that returns the status of the relays (so that you can check if a local switch has enabled a relay). Go to http://192.168.0.3/status.xml
 and it returns:
 
-```<response>  
+```
+<response>  
    <led1>0</led1>  
    <led2>1</led2>  
    <led3>0</led3>  
@@ -81,7 +82,7 @@ First define two virtual devices, one input and one output. Then create the appr
 
 ### Virtual Input
 
-<img src="rutenbeck_vi.png" width="100%">
+<img src="rutenbeck_vi.png" width="50%">
 Virtual Input
 
 <img src="rutenbeck_vi2.png" width="684px">
