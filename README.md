@@ -81,7 +81,7 @@ First define two virtual devices, one input and one output. Then create the appr
 
 ### Virtual Input
 
-<img src="rutenbeck_vi.png" width="624px">
+<img src="rutenbeck_vi.png" width="100%">
 Virtual Input
 
 <img src="rutenbeck_vi2.png" width="684px">
