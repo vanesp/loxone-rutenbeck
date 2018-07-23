@@ -66,14 +66,14 @@ Changing Ein to Aus switches it off.
 I also found a hidden HTTP request that returns the status of the relays (so that you can check if a local switch has enabled a relay). Go to http://192.168.0.3/status.xml
 and it returns:
 
-`<response>  
+```<response>  
    <led1>0</led1>  
    <led2>1</led2>  
    <led3>0</led3>  
    <led4>0</led4>  
    <pot0>nicht angeschlossen</pot0>  
 </response>
-`
+```
 
 ## Loxone configuration
 
@@ -81,22 +81,25 @@ First define two virtual devices, one input and one output. Then create the appr
 
 ### Virtual Input
 
-![Virtual Input](rutenbeck_vi.png)
+![Virtual Input](rutenbeck_vi.png =624x)
+Virtual Input
 
-![Virtual Input Command](rutenbeck_vi2.png)
+![Virtual Input Command](rutenbeck_vi2.png =684x)
+Virtual Input Command
 
-![Virtual Input Status of Led 1](rutenbeck_led1_status.png)
+![Virtual Input Status of Led 1](rutenbeck_led1_status.png =650x)
+Virtual Inpur Status of Led 1
 
 ### Virtual Output
 
-![Virtual Output](rutenbeck_vo.png)
+![Virtual Output](rutenbeck_vo.png =638x)
 
-![Virtual Output Command](rutenbeck_vo2.png)
+![Virtual Output Command](rutenbeck_vo2.png =686x)
 
-![Virtual Output Control of Led 1](rutenbeck_vo_command.png)
+![Virtual Output Control of Led 1](rutenbeck_vo_command.png =758x)
 
 ### Use in Loxone
 
-![Light Status Block](stablestatus.png)
+![Light Status Block](stablestatus.png =872x)
 
 
