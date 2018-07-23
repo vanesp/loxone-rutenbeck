@@ -81,25 +81,29 @@ First define two virtual devices, one input and one output. Then create the appr
 
 ### Virtual Input
 
-![Virtual Input](rutenbeck_vi.png){:width="624px"}
+<img src="rutenbeck_vi.png" width="624">
 Virtual Input
 
-![Virtual Input Command](rutenbeck_vi2.png =684x)
+<img src="rutenbeck_vi2.png" width="684">
 Virtual Input Command
 
-![Virtual Input Status of Led 1](rutenbeck_led1_status.png =650x)
+<img src="rutenbeck_led1_status.png" width="650">
 Virtual Inpur Status of Led 1
 
 ### Virtual Output
 
-![Virtual Output](rutenbeck_vo.png =638x)
+<img src="rutenbeck_vo.png" width="638">
+Virtual Output
 
-![Virtual Output Command](rutenbeck_vo2.png =686x)
+<img src="rutenbeck_vo2.png" width="686">
+Virtual Output Command
 
-![Virtual Output Control of Led 1](rutenbeck_vo_command.png =758x)
+<img src="rutenbeck_vo_command.png" width="758">
+Virtual Output Control of Led 1
 
 ### Use in Loxone
 
-![Light Status Block](stablestatus.png =872x)
+<img src="stablestatus.png" width="872">
+Light Status Block
 
 
