@@ -81,7 +81,7 @@ First define two virtual devices, one input and one output. Then create the appr
 
 ### Virtual Input
 
-![Virtual Input](rutenbeck_vi.png =624x)
+![Virtual Input](rutenbeck_vi.png){:width="624px"}
 Virtual Input
 
 ![Virtual Input Command](rutenbeck_vi2.png =684x)
