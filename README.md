@@ -38,7 +38,6 @@ IP address. If you can stick with the default address, 192.168.0.3, this is
 preferable. Obviously this does not work if you have more than one of
 these devices in your network.
 
-
 ## Controlling via UDP
 
 Initially you need to connect a PC with a static IP address of 192.168.0.1 to
@@ -48,7 +47,19 @@ Rutenbeck. Then you also need to enable UDP operation and the UDP port 30303.
 Then it is a simple matter of sending a command using standard Loxone virtual
 output: OUT1 1 to switch on relay 1, OUT3 0 to switch off relay 3.
 
-The UDP-command must be send to Port 30303 and end with Hex 0H
+The UDP-command must be send to Port 30303 and end with Hex 0H.
+
+The problem I ran into however, is that like all other settings, the Rutenbeck device
+loses those settings, and therefore UDP access, at random times, although frequently
+related to power cycling. I therefore looked for a way of controlling the lights without having
+to change the Rutenbeck configuration.
+
+## Control via http
+
+By carefully looking at the code of the Rutenbeck, I found that it is possible to control the relays directly.
+
+A request to `http://192.168.0.3/leds.cgi=X&value=Ein` allows led X (where X = 1..4) relay 1 to be switched on.
+Changing Ein to Aus switches it off.
 
 ## Reading status
 
@@ -63,3 +74,29 @@ and it returns:
    <pot0>nicht angeschlossen</pot0>
 </response>
 `
+
+## Loxone configuration
+
+First define two virtual devices, one input and one output. Then create the appropriate ports for each of the relays to be used.
+
+### Virtual Input
+
+![Virtual Input](images/rutenbeck_vi.png)
+
+![Virtual Input Command](images/rutenbeck_vi2.png)
+
+![Virtual Input Status of Led 1(images/rutenbeck_led1_status.png)
+
+### Virtual Output
+
+![Virtual Output](images/rutenbeck_vo.png)
+
+![Virtual Output Command](images/rutenbeck_vo2.png)
+
+![Virtual Output Control of Led 1(images/rutenbeck_vo_command.png)
+
+### Use in Loxone
+
+![Light Status Block](images/stablestatus.png)
+
+
