@@ -85,7 +85,7 @@ First define two virtual devices, one input and one output. Then create the appr
 
 ![Virtual Input Command](images/rutenbeck_vi2.png)
 
-![Virtual Input Status of Led 1(images/rutenbeck_led1_status.png)
+![Virtual Input Status of Led 1](images/rutenbeck_led1_status.png)
 
 ### Virtual Output
 
@@ -93,7 +93,7 @@ First define two virtual devices, one input and one output. Then create the appr
 
 ![Virtual Output Command](images/rutenbeck_vo2.png)
 
-![Virtual Output Control of Led 1(images/rutenbeck_vo_command.png)
+![Virtual Output Control of Led 1](images/rutenbeck_vo_command.png)
 
 ### Use in Loxone
 
