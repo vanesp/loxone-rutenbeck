@@ -18,36 +18,40 @@ http://www.rutenbeck.de/produkte/c/ip-aktoriksensorik/p/tcr-ip-4.html
 
 Available from Conrad:
 
-(http://www.conrad-electronic.co.uk/ce/en/product/976282/Rutenbeck?ref=searchDetail
+http://www.conrad-electronic.co.uk/ce/en/product/976282/Rutenbeck?ref=searchDetail
 
-This has 4 relays that can be controlled using a web-page, or UDP (which is
-not documented very well).
+This has 4 relays that can be controlled using a web-page, or UDP.
 
-Additionally the status of each relay can be retrieved using http protocol.
+Additionally the status of each relay can be retrieved using the http protocol.
 
-The device has four local inputs that can be used to switch the relays
-with local switchgear.
+The device has four local low-voltage inputs that can be used to switch the relays
+with local switches.
 
 It fits on a din rail, needs 230V for operation, and has an input for an
 optional temperature sensor.
 
 ## Documentation and shortcomings
 
+Initially you need to connect a PC with a static IP address of 192.168.0.1 to
+the Rutenbeck using a cross over cable. Only then can you access the web
+interface to set a different static address or a DHCP assigned address to the
+Rutenbeck.
+
 I have noticed that it is hard to give the TCRIP4 a permanent, new, static
 IP address. If you can stick with the default address, 192.168.0.3, this is
 preferable. Obviously this does not work if you have more than one of
 these devices in your network.
 
+Furthermore, other settings, such as wether to sync time using ntp, or to enable
+UDP operation (see below) were equally non-sticky.
+
 ## Controlling via UDP
 
-Initially you need to connect a PC with a static IP address of 192.168.0.1 to
-the Rutenbeck using a cross over cable. Only then can you access the web
-interface to set a different static address or a DHCP assigned address to the
-Rutenbeck. Then you also need to enable UDP operation and the UDP port 30303.
+In the configuration you can enable UDP operation and the UDP port 30303.
 Then it is a simple matter of sending a command using standard Loxone virtual
 output: OUT1 1 to switch on relay 1, OUT3 0 to switch off relay 3.
 
-The UDP-command must be send to Port 30303 and end with Hex 0H.
+The UDP-command must be sent to Port 30303 and end with Hex 0H.
 
 The problem I ran into however, is that like all other settings, the Rutenbeck device
 loses those settings, and therefore UDP access, at random times, although frequently
@@ -63,8 +67,9 @@ Changing Ein to Aus switches it off.
 
 ## Reading status
 
-I also found a hidden HTTP request that returns the status of the relays (so that you can check if a local switch has enabled a relay). Go to http://192.168.0.3/status.xml
-and it returns:
+I also found a hidden HTTP request that returns the status of the relays (so
+that you can check if a local switch has enabled a relay). Go
+to http://192.168.0.3/status.xml and it returns:
 
 ```
 <response>  
@@ -76,9 +81,14 @@ and it returns:
 </response>
 ```
 
+(Nicht angeschlossen means Not connected)
+
 ## Loxone configuration
 
-First define two virtual devices, one input and one output. Then create the appropriate ports for each of the relays to be used.
+First define two virtual devices, one input and one output. Then create the
+appropriate ports for each of the relays to be used. See the diagrams below.
+
+You can add the virtual outputs to light controllers, and the inputs to the user interface.
 
 ### Virtual Input
 
